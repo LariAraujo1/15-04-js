@@ -35,7 +35,7 @@
 // const numeros = string.match(regex);
 // console.log(numeros); //["3", "5"]
 
-const regex = /^
+const regex = /^(\+55)?\s?(?:\(?\d{2}\)?\s?)?(?:9\s?)?[6-9]\d{3}\s?\-?\d{4}$/;
 
 // Exibir resultado 
 if(ehValido){
@@ -44,3 +44,8 @@ if(ehValido){
 }else {
      console.log("o numero de ceular é invalido");
 }
+
+/*Explicação da expressão regular:
+^ e $ são âncoras que indicam o início e o fim da string, respectivamente. (\+55)? é um grupo de captura opcional que corresponde ao código de país "+55". O código de país é opcional para números de celular brasileiros.
+\s? corresponde a um espaço em branco opcional.
+(?:\(?\d{2}\)?\s?)? é um grupo não capturador opcional que corresponde a um código de área opcional, que pode estar entre parênteses. O código de área é composto por dois dígitos numéricos.
